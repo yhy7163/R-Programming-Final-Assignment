@@ -1,5 +1,7 @@
 # R-Programming-Final-Assignment
 Programming Assignment 3
+
+Programming Assignment 3
 R Programming
 Introduction
 Download the le ProgAssignment3-data.zip le containing the data for Programming Assignment 3 from
@@ -24,6 +26,7 @@ Number 11 (\Hospital Data.csv"). You may nd it useful to print out this documen
 Tables 19 and 11) to have next to you while you work on this assignment. In particular, the numbers of
 the variables for each table indicate column indices in each table (i.e. \Hospital Name" is column 2 in the
 outcome-of-care-measures.csv le).
+
 1 Plot the 30-day mortality rates for heart attack
 Read the outcome data into R via the read.csv function and look at the rst few rows.
 > outcome <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
@@ -36,7 +39,6 @@ run
 > outcome[, 11] <- as.numeric(outcome[, 11])
 > ## You may get a warning about NAs being introduced; that is okay
 > hist(outcome[, 11])
-1
 Because we originally read the data in as character (by specifying colClasses = "character" we need to
 coerce the column to be numeric. You may get a warning about NAs being introduced but that is okay.
 2 Finding the best hospital in a state
@@ -76,7 +78,7 @@ Error in best("BB", "heart attack") : invalid state
 Error in best("NY", "hert attack") : invalid outcome
 >
 Save your code for this function to a le named best.R.
-2
+
 3 Ranking hospitals by outcome in a state
 Write a function called rankhospital that takes three arguments: the 2-character abbreviated name of a
 state (state), an outcome (outcome), and the ranking of a hospital in that state for that outcome (num).
@@ -119,11 +121,11 @@ Here is some sample output from the function.
 > rankhospital("TX", "heart failure", 4)
 [1] "DETAR HOSPITAL NAVARRO"
 > rankhospital("MD", "heart attack", "worst")
-3
 [1] "HARFORD MEMORIAL HOSPITAL"
 > rankhospital("MN", "heart attack", 5000)
 [1] NA
 Save your code for this function to a le named rankhospital.R.
+
 4 Ranking hospitals in all states
 Write a function called rankall that takes two arguments: an outcome name (outcome) and a hospital rank-
 ing (num). The function reads the outcome-of-care-measures.csv le and returns a 2-column data frame
@@ -158,7 +160,6 @@ hospital state
 AK <NA> AK
 AL D W MCMILLAN MEMORIAL HOSPITAL AL
 AR ARKANSAS METHODIST MEDICAL CENTER AR
-4
 AZ JOHN C LINCOLN DEER VALLEY HOSPITAL AZ
 CA SHERMAN OAKS HOSPITAL CA
 CO SKY RIDGE MEDICAL CENTER CO
@@ -184,4 +185,3 @@ WI AURORA ST LUKES MEDICAL CENTER WI
 WV FAIRMONT GENERAL HOSPITAL WV
 WY CHEYENNE VA MEDICAL CENTER WY
 Save your code for this function to a le named rankall.R.
-5
